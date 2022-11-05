@@ -119,39 +119,39 @@ int main(){
 
 // Another method for the same question
 
-// #include<iostream>
-// #include<climits>
-// using namespace std;
+#include<iostream>
+#include<climits>
+using namespace std;
 
-// int main(){
+int main(){
     
-//     int n;
-//     cin>>n;
+    int n;
+    cin>>n;
 
-//     int arr[n];
+    int arr[n];
 
-//     for(int i=0; i<n; i++)
-//     {
-//         cin>>arr[i];
-//     }
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+    }
 
-//     int currentSum = 0;
-//     int maxSum = INT_MIN;
+    int currentSum = 0;
+    int maxSum = INT_MIN;
 
-//     for(int i=0; i<n; i++)
-//     {
-//         currentSum += arr[i];
-//         if(currentSum>maxSum){
-//             maxSum = currentSum;
-//         }
-//         if(currentSum<0){
-//             currentSum=0;
-//         }
+    for(int i=0; i<n; i++)
+    {
+        currentSum += arr[i];
+        if(currentSum>maxSum){
+            maxSum = currentSum;
+        }
+        if(currentSum<0){
+            currentSum=0;
+        }
         
-//     }
-//     cout<<maxSum;
-//     return 0;
-// }   
+    }
+    cout<<maxSum;
+    return 0;
+}   
 
 
 

@@ -1,0 +1,1 @@
+// https://www.codingninjas.com/codestudio/problems/cut-into-segments_1214651 
