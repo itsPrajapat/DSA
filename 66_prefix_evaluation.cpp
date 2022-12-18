@@ -5,7 +5,7 @@
 #include<math.h>
 using namespace std;
 
-int prefixEvaluation(string s){
+int prefixEvaluation(string s){    
 
     stack<int> st;
 

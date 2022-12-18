@@ -19,6 +19,7 @@ class stack{
     void push(int x){
         if(top==n-1){
             cout<<"Stack Overflow"<<endl;
+            return;
         }
         top++;
         arr[top] = x;
@@ -27,6 +28,7 @@ class stack{
     void pop(){
         if(top==-1){
             cout<<"No element to pop"<<endl;
+            return;
         }
         top--;
     }

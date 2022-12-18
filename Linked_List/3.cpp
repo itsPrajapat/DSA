@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 class node{
@@ -96,22 +96,51 @@ void merge(node* &head1, node* &head2){
     node* temp2 = head2;
 }
 
+  node* reverseR(node* &head)
+    {
+         node* node = NULL;
+        stack<int> st;
+
+        while(head!=NULL){
+            st.push(head->data);
+            head=head->next;
+        }
+
+        // while(!st.empty()){
+        //     // cout<<st.top()<<" ";
+        //     st.pop();
+        // }cout<<endl;
+
+        while(!st.empty()){
+            int top = st.top();
+            cout<<top<<" ";
+            insertAtTail(node, top);
+            st.pop();
+        }
+
+        return node->next;
+    }
+
 int main(){
 
     node* head = NULL;
     insertAtTail(head, 1);
     insertAtTail(head, 2);
     insertAtTail(head, 3);
-    insertAtTail(head, 3);
+    // insertAtTail(head, 3);
+    insertAtTail(head, 4);
     insertAtTail(head, 5);
     insertAtTail(head, 6);
     insertAtTail(head, 7);
-    insertAtTail(head, 7);
+    // insertAtTail(head, 7);
     display(head); 
     // node* newHead = reverseIterative(head);
     // node* newHead = kReverse(head, 4);
-    removeDuplicates(head);
+    // removeDuplicates(head);
+
+    node* newNode = reverseR(head);
     display(head);
+
     
     return 0;
 }

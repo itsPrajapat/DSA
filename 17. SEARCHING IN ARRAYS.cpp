@@ -45,7 +45,7 @@ int binarysearch(int arr[], int n, int key)
     int s=0;   // s means starting point
     int e=n;   // e means end point
 
-    while(s<=n){
+    while(s<=e){
         
         int mid = (s+e)/2;
 

@@ -1,44 +1,50 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void dailyTemperatures(vector<int>& temperatures)
-{
-    vector<int> ans;
-    stack<int> st;
-
-    for(int i=temperatures.size()-1; i>=0; i--){
-        st.push(temperatures[i]);
+bool isMatch(char a, char b){
+    if(a=='{' && b=='}'){
+        return 1;
     }
-    
-    int cnt = 0;
-    while(!st.empty())
-    {
-        int tp = st.top();
-        st.pop();
+    if(a=='[' && b==']'){
+        return 1;
+    }
+    if(a=='(' && b==')'){
+        return 1;
+    }
+    return 0;
+}
 
-        if(st.top()>tp){
-            cnt++;
-            ans.push_back(cnt);
-        }
-        else{
-            int t = st.size()-1;
-            while(!st.empty()){
-                int x = st.top();
-                if(x>tp){
+bool validParanthesis(string str){
 
-                }
-                
+    stack<char> st;
+
+    for(int i=0; i<str.length(); i++){
+        if(str[i]=='{' || str[i]=='(' || str[i]=='['){
+            st.push(str[i]);
+        }else if(str[i]=='}' || str[i]==')' || str[i]==']'){
+            if(st.empty()){
+                return 0;
+            }
+            char x = st.top();
+            st.pop();
+            if(!isMatch(x, str[i])){
+                return 0;
             }
         }
-        
     }
+
+    if(st.empty()){
+        return 1;
+    }
+    return 0;
+
 }
 
 int main(){
 
-    vector<int> temperatures{73,74,75,71,69,72,76,73};
+    string str = "{}";
 
-dailyTemperatures(temperatures);
+    cout<<validParanthesis(str)<<endl;
     
     return 0;
 }

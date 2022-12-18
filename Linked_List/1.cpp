@@ -9,20 +9,20 @@ class node{
     node* next;
 
     // constructor
-    node(int val){
-        data = val;
+    node(int data){
+        data = data;
         next = NULL;
     }
 };
 
-void insertAtHead(node* &head, int val){
-    node* n = new node(val);
+void insertAtHead(node* &head, int data){
+    node* n = new node(data);
     n->next = head;
     head = n;
 }
 
-void insertAtTail(node* &head, int val){
-    node* n = new node(val);
+void insertAtTail(node* &head, int data){
+    node* n = new node(data);
     if(head==NULL){
         head = n;
         return;
@@ -82,6 +82,9 @@ node* reverse(node* &head){
     return prevptr;
 }
 
+
+
+
 int main(){
 
     node* head = NULL;
@@ -98,6 +101,10 @@ insertAtTail(head, 9);
     display(head);
     node* newHead = reverse(head);
     display(newHead);
+    
+
+    
+
     
     
     return 0;

@@ -4,7 +4,7 @@
 // 3. The left and right subtree each must also be a binary search tree. There must be no duplicate nodes. 
 
 
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 struct Node{

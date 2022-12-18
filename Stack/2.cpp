@@ -2,7 +2,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void reverse(string s){
+string reverse(string s){
+    string ans = "";
     stack<string> st;
     for(int i=0; i<s.length(); i++){
         string word = "";
@@ -14,17 +15,20 @@ void reverse(string s){
     }
 
     while(!st.empty()){
-        cout<<st.top()<<" ";
+        ans += st.top()+" ";
+        // cout<<st.top()<<" ";
         st.pop();
     }
-    cout<<endl;
+    return ans;
 }
 
 int main(){
 
 
     string s = "Hello This is me and you";
-    reverse(s);
+    string st = reverse(s);
+
+    cout<<st<<endl;
     
     return 0;
 }

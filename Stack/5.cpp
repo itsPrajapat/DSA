@@ -43,7 +43,7 @@ bool validParanthesis(string str){
 
 int main(){
 
-    string str = "({[6])";
+    string str = "({[6]})";
 
     cout<<validParanthesis(str)<<endl;
     
