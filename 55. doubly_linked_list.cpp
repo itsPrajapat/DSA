@@ -92,6 +92,26 @@ void deletion(node* &head, int pos){
     delete temp;
 }
 
+node* func(node* &head){
+    node* temp = NULL;
+    node* curr = head;
+
+    while(curr!=NULL)
+    {
+        temp = curr->prev;
+        curr->prev = curr->next;
+        curr->next = temp;
+        curr = curr->prev;
+    }
+
+    if temp(!=NULL){
+        head = temp->prev;
+    }
+
+return head;
+}
+
+
 int main(){
 
     node* head = NULL;
@@ -100,12 +120,17 @@ int main(){
     insertAtTail(head, 2);
     insertAtTail(head, 3);
     insertAtTail(head, 4);
-    display(head);
+    insertAtTail(head, 5);
+    insertAtTail(head, 6);
+    // display(head);
 
-    insertAtHead(head, 5);
-    display(head);
+    // insertAtHead(head, 5);
+    // display(head);
 
-    deletion(head, 1);
+    // deletion(head, 1);
+    // display(head);
+
+    node* newNode = func(head);
     display(head);
     
     return 0;

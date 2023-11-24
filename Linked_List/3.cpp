@@ -40,6 +40,7 @@ node* reverse(node* &head){
     return prevptr;
 }
 
+// Recursion based approach
 node* reverseIterative(node* &head){
 
     // base case
@@ -135,12 +136,13 @@ int main(){
     // insertAtTail(head, 7);
     display(head); 
     // node* newHead = reverseIterative(head);
-    // node* newHead = kReverse(head, 4);
+    node* newHead = kReverse(head, 4);
     // removeDuplicates(head);
 
-    node* newNode = reverseR(head);
+    // node* newNode = reverseR(head);
     display(head);
 
     
     return 0;
 }
+

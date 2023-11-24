@@ -1,58 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Node{
-    public:
-    int data;
-    Node* left;
-    Node* right;
-
-    // constructor
-    Node(int val){
-        data = val;
-        left = NULL;
-        right = NULL;
-    }
-};
-
-
-void getVerticalOrderPrint(Node* root, int hdis, map<int, vector<int>> &m){
-
-    // base case
-    if(root==NULL){
-        return;
-    }
-
-    m[hdis].push_back(root->data);
-
-    getVerticalOrderPrint(root->left, hdis-1, m);
-    getVerticalOrderPrint(root->right, hdis+1, m);
-
-}
-
 int main(){
 
-    Node* root = new Node(1);
-    root->left = new Node(2);
-    root->right = new Node(3);
-    root->left->left = new Node(4);
-    root->left->right = new Node(5);
-    root->right->left = new Node(6);
-    root->right->right = new Node(7);
+    unordered_map<int, int> mp;
 
-    // declaring the map
-    map<int, vector<int>> m;
-    int hdis = 0;
+    int n;
+    cin>>n;
+    int arr[n];
 
-    getVerticalOrderPrint(root, hdis, m);
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+        mp[arr[i]]++;
+    }
 
-    map<int, vector<int>> :: iterator itr;
+    for(auto i : mp){
+        cout<<i.first<<" "<<i.second<<endl;
+    }
 
-    for(itr=m.begin(); itr!=m.end(); itr++)
-    {
-        for(int i=0; i<(itr->second).size(); i++){
-            cout<<(itr->second)[i]<<" ";
-        }cout<<endl;
+    cout<<mp.count(arr[0])<<endl;
+
+    unordered_map<int, int>  :: iterator itr;
+
+    for(itr=mp.begin(); itr!=mp.end(); itr++){
+        cout<<itr->first<<" "<<itr->second<<endl;
     }
 
 

@@ -88,6 +88,8 @@ int main(){
 
 Dog obj;
 obj.speak();
+Animal obj2;
+obj2.speak();
 
     return 0;
 }

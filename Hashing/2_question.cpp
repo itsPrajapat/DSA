@@ -28,7 +28,7 @@ int maxFreq(int arr[], int n){
 
 int main(){
 
-    int arr[5] = {4, 2, 3, 4, 2};
+    int arr[5] = {4, 2, 3, 2, 2};
 
     cout<<maxFreq(arr, 5)<<endl;
     
