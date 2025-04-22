@@ -16,8 +16,8 @@ void merge(int arr[], int l, int mid, int r){
         b[i] = arr[mid+1+i];
     }
 
-    int i=0; 
-    int j=0; 
+    int i=0;
+    int j=0;
     int k=l;
 
     while(i<n1 && j<n2){
@@ -30,7 +30,7 @@ void merge(int arr[], int l, int mid, int r){
             arr[k]=b[j];
             k++;
             j++;
-        }      
+        }
     }
 
     while(i<n1){
@@ -66,7 +66,7 @@ int main(){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-    
+
     return 0;
 }
 */
